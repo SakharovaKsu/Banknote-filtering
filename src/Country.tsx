@@ -1,6 +1,7 @@
 import React from 'react';
 import {City} from "./City";
 import {BanknotsType, MoneyType} from "./App";
+import styled from "styled-components";
 
 type CountryPropsType = {
     data: MoneyType[]
@@ -25,11 +26,30 @@ export const Country = (props: CountryPropsType) => {
 
     return (
         <div>
-            <button onClick={setAll}>All</button>
-            <button onClick={setDollars}>Dollars</button>
-            <button onClick={setRUBLS}>RUBLS</button>
+            <Button onClick={setAll}>All</Button>
+            <Button onClick={setDollars}>Dollars</Button>
+            <Button onClick={setRUBLS}>RUBLS</Button>
             <City data={props.data}/>
         </div>
     );
 };
+
+
+const Button = styled.button`
+  background-color: beige;
+  color: #444;
+  border: 2px solid #04d004;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  margin: 5px;
+  
+  &:hover {
+    background-color: #04d004;
+    color: beige;
+  }
+  
+  &:active {
+    background-color: #282c34;
+  }
+`
 
